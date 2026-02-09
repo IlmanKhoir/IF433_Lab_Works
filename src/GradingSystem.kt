@@ -1,7 +1,8 @@
 fun main(){
-    var name: String = "Jhon Thor"
-    var score: Int = 80
+    //Refactor: gunakan val dan hapus tipe data eksplisit
+    val name: String = "Jhon Thor"
+    val score: Int = 80
 
-    //concatenation gaya lama
-    println("Nama: " + name + ", Nilai: " + score)
+    //refactor: string template
+    println("Nama: $name, Nilai: $score" )
 }
