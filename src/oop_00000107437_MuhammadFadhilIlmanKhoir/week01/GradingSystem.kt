@@ -1,5 +1,7 @@
 package oop_00000107437_MuhammadFadhilIlmanKhoir.week01
 
+
+fun calculateStatus(score: Int) = if (score > 75) "lulus" else "tidak lulus"
 fun main(){
     //Refactor: gunakan val dan hapus tipe data eksplisit
     val name: String = "Jhon Thor"
@@ -15,4 +17,7 @@ fun main(){
         else -> "D"
     }
     println("Grade: $grade")
+    fun calculateStatus(score: Int) = if (score > 75) "lulus" else "tidak lulus"
+    println("Status: ${calculateStatus(score)}")
 }
+
