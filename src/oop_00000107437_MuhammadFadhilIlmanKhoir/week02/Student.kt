@@ -2,6 +2,8 @@ package oop_00000107437_MuhammadFadhilIlmanKhoir.week02
 
 import java.util.Scanner
 
+
+
 fun main(){
     val scanner = Scanner(System.`in`)
     println("===APLIKASI PMB UMN===")
@@ -26,11 +28,15 @@ fun main(){
         println("STATUS: PENDAFTARAN SELESAI")
     }
 }
+
 class Student (
     val name: String,
     val nim: String,
     var major: String,
 )  {
+    constructor(name: String, nim: String): this (name, nim, major = "Non-Matrculated"){
+        println("LOG: MENGGUNAKAN CONTRUCTOR JALUR UMUM (TANPA JURUSAN)")
+    }
     //Body class kososng dulu
     init {
         if (nim.length != 5) {
