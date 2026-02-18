@@ -33,6 +33,7 @@ class Student (
     val name: String,
     val nim: String,
     var major: String,
+    var gpa: Double = 0.0 // default argument
 )  {
     constructor(name: String, nim: String): this (name, nim, major = "Non-Matrculated"){
         println("LOG: MENGGUNAKAN CONTRUCTOR JALUR UMUM (TANPA JURUSAN)")
