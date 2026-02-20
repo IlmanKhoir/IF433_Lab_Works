@@ -28,14 +28,12 @@ class Employee(val name : String){
 fun main(){
     val e = Employee("Budi")
     print("====Test Eror=======")
-    //1. Test validasi Salary
-    e.salary = -1000 // Harus nya print eror
-    e.salary = 5000 // ini adak meledakan program anda
+
+    e.salary = -1000
+    e.salary = 5000
     println("Gaji: ${e.salary}")
 
-    //2. test encapsulation
     e.increasePerformanceRating()
 
-    //3. Test computed property
     println("Pajak yang harus dibayar: ${e.tax}")
 }
