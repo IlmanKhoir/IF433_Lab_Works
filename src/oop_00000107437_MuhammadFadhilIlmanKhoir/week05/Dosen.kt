@@ -6,7 +6,7 @@ class Dosen(nama: String, val nidn: String): Pegawai(nama) {
         println("[$name] sedang menyiapkan materi perkuliahan dan merevisi RKPS ")
     }
 
-    fun mengajar(){
+    fun mengajarr(){
         println("[$name] sedang mengajar mahasiswa di kelas")
     }
 }
