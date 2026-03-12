@@ -32,4 +32,14 @@ fun main(){
     println("Luas Persegi: $luasPersegi")
     println("Luas Persegi Panjang: $luasPersegiPanjang")
     println("Luas Lingkaran: $luasLingkaran")
+
+    //TUGAS MANDIRI 2
+    val wallet = EWallet("Fadhil Wallet", 50000.0)
+    val credit = CreditCard("Fadhil Card", 100000.0)
+
+    val methods: List<PaymentMethod> = listOf(wallet, credit)
+
+    for (method in methods) {
+        method.processPayment(75000.0)
+    }
 }
