@@ -41,5 +41,14 @@ fun main(){
 
     for (method in methods) {
         method.processPayment(75000.0)
+        // Smart Casting
+        if (method is EWallet) {
+
+            println("Top up otomatis...")
+            method.topUp(50000.0)
+
+            method.processPayment(75000.0)
+
+        }
     }
 }
