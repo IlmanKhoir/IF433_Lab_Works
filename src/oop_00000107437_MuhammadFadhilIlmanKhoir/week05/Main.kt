@@ -22,4 +22,14 @@ fun main(){
                 pegawai.doAdminWork()
             }
         }
+    //TUGAS MANDIRI 1
+    val math = MathHelper()
+
+    val luasPersegi = math.hitungLuas(4)
+    val luasPersegiPanjang = math.hitungLuas(6, 3)
+    val luasLingkaran = math.hitungLuas(7.0)
+
+    println("Luas Persegi: $luasPersegi")
+    println("Luas Persegi Panjang: $luasPersegiPanjang")
+    println("Luas Lingkaran: $luasLingkaran")
 }
