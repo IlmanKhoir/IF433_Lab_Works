@@ -1,9 +1,7 @@
 package oop_00000107437_MuhammadFadhilIlmanKhoir.Week06
 
 interface Clickable{
-    //Eror Property in a interface cannot have a backing field
-    val name: String = "Tombol Rahasia"
+    val name: String // abstrack property, tidak ada nilai default
 
-    //function without body (implicitly abstrack)
     fun click()
 }
