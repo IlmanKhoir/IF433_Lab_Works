@@ -8,4 +8,17 @@ fun main() {
         mapOf("name" to "Ghost Item", "type" to "CLOTHING"), // Missing ID
         mapOf("id" to "X01", "name" to "Unknown", "type" to "FOOD") // Unknown Type
     )
+    val parser = ApiParser()
+    println("=== STARTING E-COMMERCE PIPELINE ===")
+    for (raw in rawApiData) {
+        try {
+            val product = parser.parseProduct(raw)
+            product?.let {
+                println("Processing Product: $it")
+                parser.checkout(it)
+            }
+        } catch (e: IllegalArgumentException) {
+            println("ALERT: Data korup tertangkap! ${e.message}")
+        }
+    }
 }
