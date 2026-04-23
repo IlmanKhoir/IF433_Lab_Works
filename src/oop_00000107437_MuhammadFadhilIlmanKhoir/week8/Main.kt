@@ -37,4 +37,10 @@ fun main() {
     } catch (e: IllegalArgumentException) {
         println(e.message)
     }
+
+    //tes java interop
+    val javaResponse = LegacyJavaAPI.fetchServerStatus()
+    // Penggunaan !! dibenarkan karena kita yakin implementasi Java-nya tidak mengembalikan null
+    val statusLength = javaResponse!!.length
+    println("Status dari Java: $javaResponse (Length: $statusLength)")
 }
