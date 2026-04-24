@@ -14,4 +14,16 @@ fun main(){
     val asString = multipad.map {"RP. ${it}k"}
     println("Multipad: $multipad")
     println("Formatted: $asString")
+
+    //sortedBY dan forEach
+    println("\n === HDF : Sorted dan ForEach ===")
+    val randomNames = listOf("Charlie", "Alice", "Bob")
+
+    //sortedbyAscendding mengurutkan dari belakang
+    val sortedReverse = randomNames.sortedByDescending{it}
+
+    //forEach mengeksekusi aksi untuk tiap elemen (tidak mereturn list)
+    sortedReverse.forEach { name ->
+        println("user: $name")
+    }
 }
