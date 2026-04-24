@@ -45,4 +45,9 @@ fun main(){
         .filter{it.roe < 0}
         .sortedBy { it.roe }
     worstPerformersString.forEach { println(it) }
+
+    val uniquePairs = tradeHistory
+        .map { it.pair }
+        .toSet()
+    uniquePairs.forEach { println(it) }
 }
