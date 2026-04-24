@@ -29,4 +29,9 @@ fun main(){
         .sortedBy { it.pair }
 
     winningTrades.forEach { println(it) }
+
+    val closeTrades = tradeHistory
+        .filter{ it.roe < 0 }
+        .sortedBy { it.pair }
+    closeTrades.forEach { println(it) }
 }
