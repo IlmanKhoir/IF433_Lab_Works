@@ -23,4 +23,10 @@ fun main(){
         .map { it.pair.uppercase() }
 
     closedTrades.forEach { println(it) }
+
+    val winningTrades = tradeHistory
+        .filter { it.roe > 0 }
+        .sortedBy { it.pair }
+
+    winningTrades.forEach { println(it) }
 }
