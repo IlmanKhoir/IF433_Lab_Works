@@ -12,4 +12,14 @@ fun main() {
     scores.add(95)
     scores[0] = 80
     println("MUTABLE LIST: $scores")
+
+    //LANGKAH KE-2
+    println("\n=== TEST SET ===")
+    val uniqueNumbers = setOf(1,2,3,4,5)
+    println("Unique numbers: $uniqueNumbers")
+
+    val activeUsers = mutableSetOf("UserA", "UserB")
+    activeUsers.add("UserC")
+    activeUsers.add("UserA") //Diabaikan karena sudah ada
+    println("activeUsers: $activeUsers")
 }
