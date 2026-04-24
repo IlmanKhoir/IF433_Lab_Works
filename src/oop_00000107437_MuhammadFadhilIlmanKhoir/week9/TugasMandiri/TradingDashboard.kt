@@ -36,13 +36,13 @@ fun main(){
     closeTrades.forEach { println(it) }
 
     val topPerformersString = tradeHistory
-        .filter{it.roe > 0}
+        .filter{it.roe > 0 && it.status == "CLOSED"}
         .sortedByDescending { it.roe }
 
 //    topPerformersString.forEach { println(it) }
 
     val worstPerformersString = tradeHistory
-        .filter{it.roe < 0}
+        .filter{it.roe < 0 && it.status == "CLOSED"}
         .sortedBy { it.roe }
 //    worstPerformersString.forEach { println(it) }
 
