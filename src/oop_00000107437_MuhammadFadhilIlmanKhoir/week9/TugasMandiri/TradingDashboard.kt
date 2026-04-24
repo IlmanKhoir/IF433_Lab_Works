@@ -35,11 +35,11 @@ fun main(){
         .sortedBy { it.pair }
     closeTrades.forEach { println(it) }
 
-    val topPerformersString = tradeHistory
-        .filter{it.roe > 0}
-        .sortedByDescending { it.roe }
+//    val topPerformersString = tradeHistory
+//        .filter{it.roe > 0}
+//        .sortedByDescending { it.roe }
 
-    topPerformersString.forEach { println(it) }
+//    topPerformersString.forEach { println(it) }
 
     val worstPerformersString = tradeHistory
         .filter{it.roe < 0}
@@ -50,4 +50,16 @@ fun main(){
         .map { it.pair }
         .toSet()
     uniquePairs.forEach { println(it) }
+
+    val topPerformersString = tradeHistory
+        .filter {it.status == "CLOSED"   && it.roe > 0  }
+        .map { "Pair: ${it.pair} | Pos: ${it.position} | Lev: ${it.leverage}x | ROE: ${it.roe}%" }
+    println("=== CRYPTO TRADING DASHBOARD ===")
+    if (topPerformersString.isEmpty()) {
+        println("Tidak ada performa profit saat ini.")
+    } else {
+        topPerformersString.forEach { line ->
+            println(line)
+        }
+    }
 }
