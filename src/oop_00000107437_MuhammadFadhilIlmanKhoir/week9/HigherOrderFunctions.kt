@@ -7,4 +7,11 @@ fun main(){
     //filter() membuat list baru berisi elemen yang memenuhi kondisi (true)
     val evens = numbers.filter { it % 2 == 0 }
     println("Evens only: $evens")
+
+    println("\n === HDF : MAP ===")
+    //map() merubah bentuk nilai data. tapi ukurannya tetap sama
+    val multipad = evens.map {it + 10}
+    val asString = multipad.map {"RP. ${it}k"}
+    println("Multipad: $multipad")
+    println("Formatted: $asString")
 }
