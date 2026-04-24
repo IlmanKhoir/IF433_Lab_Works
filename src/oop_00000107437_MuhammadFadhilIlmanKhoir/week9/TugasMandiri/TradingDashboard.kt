@@ -34,4 +34,9 @@ fun main(){
         .filter{ it.roe < 0 }
         .sortedBy { it.pair }
     closeTrades.forEach { println(it) }
+
+    val topPerformersString = tradeHistory
+        .filter{it.roe > 0}
+        .sortedByDescending { it.roe > 0}
+    topPerformersString.forEach { println(it) }
 }
