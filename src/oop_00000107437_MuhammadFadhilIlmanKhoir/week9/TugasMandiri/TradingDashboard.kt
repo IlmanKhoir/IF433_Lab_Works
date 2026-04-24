@@ -40,4 +40,9 @@ fun main(){
         .sortedByDescending { it.roe }
 
     topPerformersString.forEach { println(it) }
+
+    val worstPerformersString = tradeHistory
+        .filter{it.roe < 0}
+        .sortedBy { it.roe }
+    worstPerformersString.forEach { println(it) }
 }
