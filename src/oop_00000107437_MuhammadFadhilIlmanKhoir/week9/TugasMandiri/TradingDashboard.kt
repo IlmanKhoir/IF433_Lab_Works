@@ -16,4 +16,11 @@ fun main(){
     tradeHistory.forEach { log ->
         println("Pair : ${log.pair} | ROE : ${log.roe}% | Status : ${log.status}")
     }
+
+    val  closedTrades = tradeHistory
+        .filter { it.status == "CLOSED" }
+        .sortedBy { it.pair }
+        .map { it.pair.uppercase() }
+
+    closedTrades.forEach { println(it) }
 }
