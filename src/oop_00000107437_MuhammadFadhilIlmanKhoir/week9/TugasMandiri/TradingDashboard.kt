@@ -37,6 +37,7 @@ fun main(){
 
     val topPerformersString = tradeHistory
         .filter{it.roe > 0}
-        .sortedByDescending { it.roe > 0}
+        .sortedByDescending { it.roe }
+
     topPerformersString.forEach { println(it) }
 }
