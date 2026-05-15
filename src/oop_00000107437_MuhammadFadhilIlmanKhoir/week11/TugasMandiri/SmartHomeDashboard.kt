@@ -3,4 +3,11 @@ package oop_00000107437_MuhammadFadhilIlmanKhoir.week11.TugasMandiri
 fun main() {
     // CHECKPOINT 13: Siapkan penampung perangkat
     val homeDevices = mutableListOf<SmartDevice>()
+
+    SmartDevice("Philips WiZ Living Room", "Lighting").apply {
+        isOnline = true
+        powerLoad = 12
+    }.also {
+        homeDevices.add(it)
+    }
 }
