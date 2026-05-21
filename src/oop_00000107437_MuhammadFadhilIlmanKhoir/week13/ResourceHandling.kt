@@ -24,4 +24,14 @@ fun main() {
             out.println("Safe Log entry #$i: System status OK.")
         }
     }
+
+    // --- CHECKPOINT 6 ---
+    println("\n=== TEST BUFFERED READER ===")
+    // Membuka stream tanpa me-load seluruh file langsung ke RAM
+    safeFile.bufferedReader().use { reader ->
+        // Menggunakan sequence dan mengambil 5 baris pertama saja
+        reader.lineSequence().take(5).forEach { line ->
+            println("Stream Read: $line")
+        }
+    }
 }
