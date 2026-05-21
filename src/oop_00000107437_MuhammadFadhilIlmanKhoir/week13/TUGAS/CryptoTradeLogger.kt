@@ -33,3 +33,11 @@ fun fromCsvTrade(line: String): TradeRecord? {
         null
     }
 }
+// --- CHECKPOINT 15 ---
+fun saveTrades(trades: List<TradeRecord>, path: String) {
+    File(path).printWriter().use { writer ->
+        trades.forEach { trade ->
+            writer.println(trade.toCsv())
+        }
+    }
+}
