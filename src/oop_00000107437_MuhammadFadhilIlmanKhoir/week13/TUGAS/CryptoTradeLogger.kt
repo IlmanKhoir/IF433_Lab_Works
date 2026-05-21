@@ -59,4 +59,8 @@ fun main() {
         TradeRecord(id = 3, symbol = "SOLUSDT", type = "Long", margin = 50.0, pnl = 15.2)
     )
     saveTrades(mockTrades, "crypto_trades.csv")
+
+    // --- CHECKPOINT 18 ---
+    // Menyuntikkan baris data cacat ke dalam file CSV untuk uji ketahanan sistem
+    File("crypto_trades.csv").appendText("CORRUPT_ID, DOGEUSDT, Hold, XX, YY\n")
 }
