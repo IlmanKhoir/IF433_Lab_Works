@@ -11,3 +11,6 @@ data class TradeRecord(
     val margin: Double,
     val pnl: Double
 )
+// --- CHECKPOINT 12 ---
+// Serialization
+fun TradeRecord.toCsv(): String = "$id,$symbol,$type,$margin,$pnl"
