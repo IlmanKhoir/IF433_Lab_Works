@@ -63,4 +63,8 @@ fun main() {
     // --- CHECKPOINT 18 ---
     // Menyuntikkan baris data cacat ke dalam file CSV untuk uji ketahanan sistem
     File("crypto_trades.csv").appendText("CORRUPT_ID, DOGEUSDT, Hold, XX, YY\n")
+
+    // --- CHECKPOINT 19 ---
+    val loadedData = loadTrades("crypto_trades.csv")
+    val totalPnl = loadedData.sumOf { it.pnl }
 }
