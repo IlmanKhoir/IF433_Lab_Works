@@ -32,3 +32,12 @@ class PostgreSQLDatabase : Database {
         println("Saving $name to PostgreSQL")
     }
 }
+
+class BetterUserService(
+    private val database: Database
+) {
+
+    fun register(name: String) {
+        database.saveUser(name)
+    }
+}
