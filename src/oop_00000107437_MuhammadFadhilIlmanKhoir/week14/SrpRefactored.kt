@@ -13,3 +13,29 @@ class UserRepository {
         println("Saving $username to database")
     }
 }
+
+
+class EmailService {
+
+    fun sendEmail(email: String) {
+        println("Sending email to $email")
+    }
+}
+
+class UserRegistrationService(
+    private val validator: UserValidator,
+    private val repository: UserRepository,
+    private val emailService: EmailService
+) {
+
+    fun register(username: String, email: String) {
+
+        if (!validator.validate(username)) {
+            println("Username invalid")
+            return
+        }
+
+        repository.save(username)
+        emailService.sendEmail(email)
+    }
+}
