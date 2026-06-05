@@ -1,21 +1,24 @@
 package oop_00000107437_MuhammadFadhilIlmanKhoir.week14
+import java.io.File
+interface OrderRepository {
+    fun saveOrder(order: String)
+}
 
-class BadOrderProcessor {
+class CsvOrderRepository : OrderRepository {
 
-    fun processOrder(
-        customerType: String,
-        email: String,
-        price: Double
-    ) {
+    override fun saveOrder(order: String) {
 
-        val finalPrice = when (customerType) {
-            "VIP" -> price * 0.8
-            "REGULAR" -> price * 0.9
-            else -> price
-        }
+        File("orders.csv").appendText("$order\n")
+    }
+}
 
-        println("Writing transaction to CSV")
-        println("Email sent to $email")
-        println("Total : $finalPrice")
+interface NotificationService {
+    fun sendNotification(message: String)
+}
+
+class EmailNotifier : NotificationService {
+
+    override fun sendNotification(message: String) {
+        println("EMAIL: $message")
     }
 }
