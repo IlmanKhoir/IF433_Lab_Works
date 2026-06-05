@@ -15,3 +15,12 @@ class RegularDiscount : DiscountStrategy {
         return price * 0.9
     }
 }
+
+class SafeDiscountCalculator(
+    private val strategy: DiscountStrategy
+) {
+
+    fun calculate(price: Double): Double {
+        return strategy.applyDiscount(price)
+    }
+}
