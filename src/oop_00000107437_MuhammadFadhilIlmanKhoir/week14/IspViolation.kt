@@ -23,3 +23,15 @@ class SimplePrinter : MultifunctionDevice {
         throw UnsupportedOperationException()
     }
 }
+
+interface Printable {
+    fun print()
+}
+
+interface Scannable {
+    fun scan()
+}
+
+interface Faxable {
+    fun fax()
+}
