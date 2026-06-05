@@ -24,3 +24,10 @@ class SafeDiscountCalculator(
         return strategy.applyDiscount(price)
     }
 }
+
+class SeniorDiscount : DiscountStrategy {
+
+    override fun applyDiscount(price: Double): Double {
+        return price * 0.85
+    }
+}
