@@ -15,3 +15,20 @@ class UserService {
         database.saveUser(name)
     }
 }
+interface Database {
+    fun saveUser(name: String)
+}
+
+class MySQLDatabaseImpl : Database {
+
+    override fun saveUser(name: String) {
+        println("Saving $name to MySQL")
+    }
+}
+
+class PostgreSQLDatabase : Database {
+
+    override fun saveUser(name: String) {
+        println("Saving $name to PostgreSQL")
+    }
+}
