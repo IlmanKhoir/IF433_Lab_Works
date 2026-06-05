@@ -29,3 +29,21 @@ class Square : Rectangle() {
 interface Shape {
     fun area(): Int
 }
+class RectangleShape(
+    private val width: Int,
+    private val height: Int
+) : Shape {
+
+    override fun area(): Int {
+        return width * height
+    }
+}
+
+class SquareShape(
+    private val side: Int
+) : Shape {
+
+    override fun area(): Int {
+        return side * side
+    }
+}
