@@ -26,3 +26,6 @@ class Square : Rectangle() {
             super.height = value
         }
 }
+interface Shape {
+    fun area(): Int
+}
